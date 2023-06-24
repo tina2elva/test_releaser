@@ -24,4 +24,11 @@ jobs:
     - name: Build
       run: go build -v ./...
   
-
+    # 使用 goreleaser 进行生成多平台代码并且上传到github release进行发布
+    - name: Create release on GitHub
+      uses: goreleaser/goreleaser-action@v4
+        with:
+          version: latest
+          args: release --clean
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
