@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   goreleaser:
-    runs-on: windows
+    runs-on: ubuntu-latest
     steps:
       -
         name: Checkout
